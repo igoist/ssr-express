@@ -1,0 +1,31 @@
+{
+  "name": "ssr-express",
+  "version": "0.0.1",
+  "description": "ssr(server side render) of express",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/igoist/ssr-express.git"
+  },
+  "keywords": [
+    "ssr",
+    "server-side-render",
+    "igoist"
+  ],
+  "author": "igoist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igoist/ssr-express/issues"
+  },
+  "homepage": "https://github.com/igoist/ssr-express#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "pug": "^2.0.3"
+  }
+}
