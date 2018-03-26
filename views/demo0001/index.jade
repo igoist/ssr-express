@@ -1,13 +1,48 @@
 extends ../index.jade
 
 
+block style
+  link(rel="stylesheet" href="/static/css/demo0001/style.css")
+
+
 block header
-  .h1 Hello Neo
+  // .h1 Hello Neo
 
 
 block content
-  .h3 Yeh. And #{xtz}
+  - let rows = lives.slice(0, 9);
+  // .h3 Yeh. And #{xtz} #{lives} #{rows}
+  .outer
+    .inner
+      section#past-lives-head
+        div
+          h1
 
+      #past-lives
+        each live in rows
+          .live-abstract(data-id="#{live.id}")
+            a.la-img(style="background-image: url(#{live.imgPast.url})")
+            a(href="/live/#{live.id}")
+              h2.la-title #{live.name}
+              if live.subtitle
+                h2.la-title #{live.subtitle}
+            p.la-price $&nbsp;#{live.price}
+            p.la-intro #{live.anchor.name}，#{live.anchor.title}
+
+      // template#past-lives-tpl
+      //     each live in tpl
+      //         .live-abstract(data-id="#{live.id}")
+      //             a.la-img(style="background-image: url(#{live.imgPast.url})")
+      //             a(href="/live/#{live.id}")
+      //                 h2.la-title #{live.name}
+      //                 if live.subtitle
+      //                     h2.la-title #{live.subtitle}
+      //             p.la-price $&nbsp;#{live.price}
+      //             p.la-intro #{live.anchor.name}，#{live.anchor.title}
+
+      section#past-lives-more
+        div
+          span 查看更多
 
 block script
   script(type="text/javascript" src="/static/js/demo0001.js")
